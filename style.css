@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Montserrat:wght@500;600&family=Open+Sans&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body{
+    margin: 0;
+    padding: 0;
+    overflow-x:inherit;
+
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;;
+
+    display: grid;
+    place-items: center;
+  }
+  img {
+    width: 300px;
+    height: 200px;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    color: antiquewhite;
+    background-color: #0a4995;
+
+    width: 100%;
+    padding: 10px 10px 0px 0px;
+  }
+  ul, li {
+    display: flex;
+    text-decoration: none;
+  }
+  .link {
+    color: blanchedalmond;
+    text-decoration: none;
+    margin: 10px;
+  }
+  a:hover {
+    color: aqua;
+  }
+  section {
+    display: flex;
+    justify-content: space-around;
+    max-width: 70%;
+  }
+  article {
+    margin: 20px;
+  }
+  .tecnologia__title {
+    color: #0a4995;
+  }
+  .viagens__title {
+    color: #48b69e;
+  }
