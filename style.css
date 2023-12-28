@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+body {
+    line-height: 1;
+    font-family: 'Inter', sans-serif;
+    background-color: #22252D;
+    color: blanchedalmond;
+}
+container {
+    display: flex;
+    justify-content: center;
+}
+.container {
+    width: 500px;
+}
+.header {
+    margin: 100px 0px 50px 0px;
+}
+h3 {
+    font-size: 30px;
+    font-weight: 400;
+}
+form {
+    display: flex;
+    align-items: center;
+}
+#newTaskInput {
+    color: antiquewhite;
+    background-color: #292C36;
+    border-radius: 5px;
+    border: none;
+    
+    height: 25px;
+    width: 90%;
+    margin: 10px 0px 10px 0px;
+    padding: 5px 10px;
+    
+    font-size: 14px;
+    font-weight: 300;
+}
+#newTaskButton {
+    height: 35px;
+    margin: 10px 0px 10px 5px;
+
+    font-size: 30px;
+    font-weight: 400;
+
+    border-radius: 5px;
+    border: none;
+
+    color: #797B83;
+    background-color: #22252D;
+
+    cursor: pointer;
+}
+.line {
+    background-color: #797B83;
+    height: 1px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.task__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.task_list {
+    padding: 0px;
+}
+li {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+
+    text-align: start;
+    cursor: pointer;
+
+    height: 25px;
+    width: 100%;
+    padding: 6px 15px;
+    margin: 10px 0px;
+    font-size: 15px;
+    font-weight: 300;
+
+    background-color: #292C36;
+    border-radius: 5px;
+    color: white;
+}
+li:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+li:target {
+    text-decoration: line-through;
+}
+.done{
+    text-decoration: line-through;
+    color: #797B83;
+} 
