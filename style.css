@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Montserrat:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #FFFFFF;
+    background-color: #222831;
+
+    font-family: "DM sans", sans-serif;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: left;
+    margin-top: 10rem;
+    padding: 5rem 8rem;
+
+}
+.input_container{
+    margin-bottom: 1rem;
+}
+label {
+    display: block;
+}
+input {
+    width: 18rem;
+    padding: 0.2rem;
+}
+button {
+    border: none;
+    border-radius: 3px;
+    padding: .4rem 1rem;
+    background-color: aqua;
+    cursor: pointer;
+}

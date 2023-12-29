@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <form action="submit">
+        <div class="input_container">
+            <label for="name">Nome:</label>
+            <input type="name" name="name" id="name">
+        </div>
+        <div class="input_container">
+            <label for="name">E-mail:</label>
+            <input type="text" name="email" id="email">
+        </div>
+        <div class="input_container">
+            <label for="tel">Telefone:</label>
+            <input type="tel" name="tel" id="telefone" placeholder="(00) 00000-0000">
+        </div>
+        <div class="input_container">
+            <label for="cpf">CPF:</label>
+            <input type="cpf" name="cpf" id="cpf" placeholder="000.000.000-00">
+        </div>
+        <div class="input_container">
+            <label for="endereço">Endereço:</label>
+            <input type="text" name="enderço" id="end">
+        </div>
+        <div class="input_container">
+            <label for="cep">CEP:</label>
+            <input type="cep" name="cep" id="cep" placeholder="00000-00">
+        </div>
+        <button>Enviar</button>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="./js/jquery.mask.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#telefone').mask('(00) 0000-0000');
+            $('#cpf').mask('000.000.000-00');
+            $('#cep').mask('00000-000');
+
+            $("form").submit(function(e) {
+                e.preventDefault();
+                alert("enviou")
+            })
+        });
+    </script>
+</body>
+</html>
