@@ -1,0 +1,1 @@
+function calcIMC(c,l){c=2*c*l;return console.log(c),c}calcIMC(76,1.5);
