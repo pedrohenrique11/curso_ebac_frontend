@@ -21,4 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         profileLink.href = data.html_url;
 
     })
+    .catch(error => {
+        throw new Error("Requisição invalida")
+    })
 })
