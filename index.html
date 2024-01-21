@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Vue.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<div id="app">
+  <calculator></calculator>
+</div>
+
+<script>
+Vue.component('calculator', {
+  data() {
+    return {
+      expression: '',
+      buttons: [
+        ['7', '4', '1', '0', 'sin','asin', '%'],
+        ['8', '5', '2', '.', 'cos','acos', '^'],
+        ['9', '6', '3', '=', 'tan','atan', '('],
+        ['/', '*', '-', '+', 'C','log', ')'],
+      ]
+    };
+  },
+  methods: {
+    handleButtonClick(button) {
+      switch (button) {
+        case '=':
+          this.calculateResult();
+          break;
+        case 'C':
+          this.clearExpression();
+          break;
+        case 'sqrt':
+          this.calculateSquareRoot();
+          break;
+        case '%':
+          this.calculatePercentage();
+          break;
+        case '^':
+          this.addPowerSymbol();
+          break;
+        case 'sin':
+          this.calculateSine();
+          break;
+        case 'cos':
+          this.calculateCosine();
+          break;
+        case 'tan':
+          this.calculateTangent();
+          break;
+        case 'asin':
+          this.calculateArcSine();
+          break;
+        case 'acos':
+          this.calculateArcCosine();
+          break;
+        case 'atan':
+          this.calculateArcTangent();
+          break;
+        case '(':
+          this.expression += button;
+          break;
+        case ')':
+          this.expression += button;
+          break;
+        default:
+          this.expression += button;
+      }
+    },
+    calculateResult() {
+      try {
+        this.expression = eval(this.expression).toString();
+      } catch (error) {
+        this.expression = 'Erro';
+      }
+    },
+    clearExpression() {
+      this.expression = '';
+    },
+    calculateSquareRoot() {
+      try {
+        this.expression = Math.sqrt(eval(this.expression)).toString();
+      } catch (error) {
+        this.expression = 'Erro';
+      }
+    },
+    calculatePercentage() {
+      try {
+        this.expression = (eval(this.expression) / 100).toString();
+      } catch (error) {
+        this.expression = 'Erro';
+      }
+    },
+    addPowerSymbol() {
+      this.expression += '**';
+    },
+    calculateSine() {
+      try {
+        const result = Math.sin(eval(this.expression));
+        this.expression = result.toString();
+      } catch (error) {
+        this.expression = 'Erro';
+      }
+    },
+    calculateCosine() {
+      try {
+        const result = Math.cos(eval(this.expression));
+        this.expression = result.toString();
+      } catch (error) {
+        this.expression = 'Erro';
+      }
+    },
+    calculateTangent() {
+      try {
+        const result = Math.tan(eval(this.expression));
+        this.expression = result.toString();
+      } catch (error) {
+        this.expression = 'Erro';
+      }
+    },
+    calculateArcSine() {
+      try {
+        const result = Math.asin(eval(this.expression));
+        this.expression = result.toString();
+      } catch (error) {
+        this.expression = 'Erro';
+      }
+    },
+    calculateArcCosine() {
+      try {
+        const result = Math.acos(eval(this.expression));
+        this.expression = result.toString();
+      } catch (error) {
+        this.expression = 'Erro';
+      }
+    },
+    calculateArcTangent() {
+      try {
+        const result = Math.atan(eval(this.expression));
+        this.expression = result.toString();
+      } catch (error) {
+        this.expression = 'Erro';
+      }
+    }
+  },
+  template: `
+    <div class="calculator">
+      <input v-model="expression" type="text" disabled>
+      <div class="buttons">
+        <div v-for="row in buttons" :key="row" v-if="row !== ''">
+          <button v-for="button in row" :key="button" @click="handleButtonClick(button)">
+            {{ button }}
+          </button>
+        </div>
+      </div>
+    </div>
+  `
+});
+
+new Vue({
+  el: '#app'
+});
+</script>
+
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+  }
+
+  .calculator {
+    max-width: 400px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.4rem 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+
+</body>
+</html>
